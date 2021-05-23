@@ -1,0 +1,13 @@
+yum update -y
+yum install wget -y
+yum install gcc -y
+yum install php-devel -y
+yum install php-pear -y
+yum install libssh2 -y
+yum install libssh2-devel -y
+yum install screen -y
+yum install httpd -y
+pecl install -f ssh2
+touch /etc/php.d/ssh2.ini
+echo extension=ssh2.so > /etc/php.d/ssh2.ini
+service httpd restart
